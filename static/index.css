@@ -1,0 +1,36 @@
+#thefold {
+    /* TODO: make the break done in css or js rather than using a chain of <br> tags */
+}
+
+/* When narrow. Rearrange labels when flexbox reflows for narrow screens (label moves from above, to the right of the radio) */
+@media (max-width: 767.5px) {
+    /* Remove <br> */
+    #main_quiz label + br {
+        display: none;
+    }
+
+    /* Swap order by making flexbox and using order */
+    /* Ref: https://stackoverflow.com/questions/220273/how-can-i-reorder-my-divs-using-only-css */
+    #main_quiz div.col-md-auto {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #main_quiz label {
+        order: 2;
+        padding-left: 5px;
+    }
+    #main_quiz input {
+        order: 1;
+    }
+}
+
+/* When wide. Restore the <br> tag */
+@media (min-width: 767.6px) {
+    /* pass */
+    /* display: none doesn't need to be actively removed. It reverts when the @media state isn't true anymore */
+}
+
+.question_text {
+    font-weight: bold;
+}

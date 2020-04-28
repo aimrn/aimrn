@@ -1,11 +1,136 @@
 {% extends "base.html" %}
+
 {% block head %}
+<!-- My CSS (page specific) -->
+<link rel="stylesheet" href="/static/index.css">
 {% endblock %}
 
 {% block title %}
-Are You Manic Right Now
+Are You Manic Right Now?
 {% endblock %}
 
 {% block body %}
-Yes
+<!-- Title and logo -->
+<h1>Are You Manic Right Now?</h1>
+
+<!-- Break to below the fold for the joke-->
+<div id="thefold"></div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Yes</h1>
+<h3>(probably)</h3>
+<p>With absolutely no data to back me up, I reckon purely the fact that you're here probably means your risk of having mania just jumpped like 20 points. And you know I'm right, right?</p>
+<br>
+<br>
+<br>
+
+<!-- The actual evidence based quiz -->
+<!-- (soemthing to think about, should I link the evidence here, or on an "evidence" tab. Maybe just include it in the faq. Not sure) -->
+
+<div id="main_quiz">
+    <!-- FIX: When in colum stacked mode. I want to align all the select bubbles with each other as a group in line (but centred) -->
+    
+    {% for q in questions %}
+        <div class="container">
+            <p class="question_text">{{ q.num }}. {{ q.question }}</p>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_0">Not at all</label><br>
+                    <input type="radio" id="q{{ q.num }}_0" name="q{{ q.num }}" value="0">
+                </div>
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_1">Just a little</label><br>
+                    <input type="radio" id="q{{ q.num }}_1" name="q{{ q.num }}" value="1">
+                </div>
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_2">Somewhat</label><br>
+                    <input type="radio" id="q{{ q.num }}_2" name="q{{ q.num }}" value="2">
+                </div>
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_3">Moderately</label><br>
+                    <input type="radio" id="q{{ q.num }}_3" name="q{{ q.num }}" value="3">
+                </div>
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_4">Quite a lot</label><br>
+                    <input type="radio" id="q{{ q.num }}_4" name="q{{ q.num }}" value="4">
+                </div>
+                <div class="col-md-auto">
+                    <label for="q{{ q.num }}_5">Very much</label><br>
+                    <input type="radio" id="q{{ q.num }}_5" name="q{{ q.num }}" value="5">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        {% endfor %}
+    </div> 
+
+
+    <div class="container">
+        <p>2. I need less sleep than usual.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-auto">
+                <label for="q2_0">Not at all</label><br>
+                <input type="radio" id="q2_0" name="q2" value="0">
+            </div>
+            <div class="col-md-auto">
+                <label for="q2_1">Just a little</label><br>
+                <input type="radio" id="q2_1" name="q2" value="1">
+            </div>
+            <div class="col-md-auto">
+                <label for="q2_2">Somewhat</label><br>
+                <input type="radio" id="q2_2" name="q2" value="2">
+            </div>
+            <div class="col-md-auto">
+                <label for="q2_3">Moderately</label><br>
+                <input type="radio" id="q2_3" name="q2" value="3">
+            </div>
+            <div class="col-md-auto">
+                <label for="q2_4">Quite a lot</label><br>
+                <input type="radio" id="q2_4" name="q2" value="4">
+            </div>
+            <div class="col-md-auto">
+                <label for="q2_5">Very much</label><br>
+                <input type="radio" id="q2_5" name="q2" value="5">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div> 
+
+</div>
+
+<!-- The evidence based scoring -->
+
+<!-- The randomly generated name feature/joke -->
+
+<!-- The non-evidence based "questions"/motivational talking -->
+
+<!-- The "scoring" gotcha gut punch bit to encourage action -->
+
+<!-- The final question/answer button -->
+<!-- Think more about this. One button? one big yes, one small no? a no that runs away from you? -->
+<!-- Getting a little gimicky. I think I'll probably settle on just the one regular button -->
+
+<!-- Link to next page (for yes). Havent decide if there's going to be a "no" -->
+
+
 {% endblock %}

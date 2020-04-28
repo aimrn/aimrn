@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+
+#base_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
